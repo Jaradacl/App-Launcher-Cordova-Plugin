@@ -103,6 +103,7 @@ public class Launcher extends CordovaPlugin {
 				public void run() {
 					final PackageManager pm = plugin.webView.getContext().getPackageManager();
 					final Intent intent = new Intent(Intent.ACTION_VIEW);
+					
 					if (dataType != null) {
 						intent.setDataAndType(Uri.parse(uri), dataType);
 					} else {
@@ -322,6 +323,7 @@ public class Launcher extends CordovaPlugin {
 		cordova.getThreadPool().execute(new LauncherRunnable(this.callback) {
 			public void run() {
 				Intent intent = new Intent(Intent.ACTION_VIEW);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				if (dataType != null) {
 					intent.setDataAndType(Uri.parse(uri), dataType);
 				} else {
@@ -380,6 +382,7 @@ public class Launcher extends CordovaPlugin {
 		cordova.getThreadPool().execute(new LauncherRunnable(this.callback) {
 			public void run() {
 				Intent intent = new Intent(Intent.ACTION_VIEW);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				intent.setData(Uri.parse(uri));
 				try {
 					intent.putExtras(extras);
