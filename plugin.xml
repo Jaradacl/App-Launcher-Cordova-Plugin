@@ -42,7 +42,6 @@
 			<source-file src="src/android/Launcher.java" target-dir="src/com/hutchind/cordova/plugins/launcher" />
 			<source-file src="src/android/ParseTypes.java" target-dir="src/com/hutchind/cordova/plugins/launcher" />
 			<config-file target="AndroidManifest.xml" parent="/manifest">
-			      	<uses-feature android:name="android.hardware.camera" android:required="false"/>
 				<uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
 		    	</config-file>
 	</platform>
